@@ -1,4 +1,4 @@
-package shiropro.shiro;
+package shiropro.shiro
 
 
 import java.util.HashSet;
@@ -28,8 +28,7 @@ import shiropro.service.IUserInfoService;
  */
 public class MyShiroRealm extends AuthorizingRealm {
 
-	@Resource
-	private IUserInfoService userInfoService;
+	@Resource	private IUserInfoService userInfoService;
 
 	/**
 	 * 认证信息.(身份验证) : Authentication 是用来验证用户身份
@@ -85,6 +84,7 @@ public class MyShiroRealm extends AuthorizingRealm {
 				info.addStringPermission(permission);
 			}*/
 			Set<String> permissionSet =new HashSet<String>(); 
+			permissionSet.add("权限删除");
 			permissionSet.add("权限添加");
 		    info.setStringPermissions(permissionSet);
 			return info;
